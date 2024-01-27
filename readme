@@ -6,11 +6,15 @@
 
 This Python application scrapes content from a website, stores it in a PostgreSQL database, and sends notifications to a Telegram channel about new content.
 
+---
+
 ## Features
 
 - 🕸️ Web scraping of articles.
 - 🗄️ Insertion of scraped data into PostgreSQL.
 - 📡 Telegram notifications for new content.
+
+---
 
 ## Technologies Used
 
@@ -21,6 +25,8 @@ This Python application scrapes content from a website, stores it in a PostgreSQ
 - Aiogram
 - Asyncio
 - PostgreSQL
+
+---
 
 ## Installation
 
@@ -49,6 +55,8 @@ This Python application scrapes content from a website, stores it in a PostgreSQ
 
    - Modify the application code with your PostgreSQL and Telegram API credentials, and specify the target website URL.
 
+---
+
 ## Usage
 
 1. **Run the script:**
@@ -61,17 +69,25 @@ This Python application scrapes content from a website, stores it in a PostgreSQ
 
 3. Ensure the script is scheduled to run at appropriate intervals for regular updates.
 
+---
+
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements or additional features.
+
+---
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
+---
+
 ## Acknowledgments
 
 - Thanks to the developers of the libraries and frameworks used in this project.
+
+---
 
 ## Author
 

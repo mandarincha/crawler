@@ -1,0 +1,53 @@
+Web Scraper with Telegram Notifications
+
+This Python application is designed to scrape content from a specified website, insert relevant information into a PostgreSQL database, and send notifications to a Telegram channel about newly added content.
+
+Features
+
+Web scraping of articles from a target website.
+Insertion of scraped data into a PostgreSQL database.
+Telegram notifications for newly added content.
+Technologies Used
+
+Python 3
+Requests
+BeautifulSoup
+Psycopg2
+Aiogram
+Asyncio
+PostgreSQL
+Installation
+
+Clone the repository:
+bash
+Copy code
+git clone https://github.com/yourusername/web-scraper.git
+Install dependencies using pip:
+bash
+Copy code
+cd web-scraper
+pip install -r requirements.txt
+Set up a PostgreSQL database with appropriate tables. Ensure you have the necessary credentials.
+Obtain a Telegram bot API token and configure a Telegram channel for receiving notifications.
+Update the application code with the following configurations:
+PostgreSQL database credentials
+Telegram bot API token
+Target website URL
+Usage
+
+Run the Python script to start scraping content:
+Copy code
+python scraper.py
+The script will scrape the target website, insert new content into the database, and send notifications to the configured Telegram channel.
+Ensure the script is run at appropriate intervals to keep the content updated.
+Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests for any improvements or features you'd like to see.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+
+Thanks to the developers of Requests, BeautifulSoup, Psycopg2, Aiogram, and other libraries used in this project.

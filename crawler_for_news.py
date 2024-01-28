@@ -55,6 +55,6 @@ def scrape_website_and_insert(url):
         if connection:
             cursor.close()
             connection.close()
-if __name__ == "__main__":
+if __name__ == '__main__':
     url = 'https://www.uzpharm-control.uz'
     scrape_website_and_insert(url)

@@ -11,6 +11,7 @@ dp = Dispatcher()
 async def send_message_to_telegram(message):
     try:
         await bot.send_message(chat_id='-4103413678', text=message)
+        await dp.start_polling(bot)
     except Exception as e:
         await bot.send_message(chat_id='-4103413678', text=f"Error sending message: {str(e)}")
 def scrape_website_and_insert(url):

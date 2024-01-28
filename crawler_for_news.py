@@ -2,17 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import psycopg2
 from psycopg2 import Error
-from aiogram import Bot, Dispatcher
-import asyncio
-API_TOKEN = '6864801093:AAFZKVGU6Wo3eaSQM9nrU81DV3LNQ7MjzkM'
-bot = Bot(token=API_TOKEN)
-dp = Dispatcher()
 
-async def send_message_to_telegram(message):
-    try:
-        await bot.send_message(chat_id='-4103413678', text=message)
-    except Exception as e:
-        await bot.send_message(chat_id='-4103413678', text=f"Error sending message: {str(e)}")
+
 def scrape_website_and_insert(url):
     try:
         connection = psycopg2.connect(
@@ -45,12 +36,11 @@ def scrape_website_and_insert(url):
                         cursor.execute(insert_query, record_to_insert)
                         connection.commit()
                         message = f"New entry added:\nTitle: {title}\nContent: {content}\nRead more: {read_more_link}"
-                        asyncio.run(send_message_to_telegram(message))
+                        print(message)
         else:
             print(f"Status Code: {response.status_code}")
     except (Exception, Error) as error:
         print("Error while connecting to PostgreSQL", error)
-        asyncio.run(send_message_to_telegram(f"Error occurred: {str(error)}"))
     finally:
         if connection:
             cursor.close()
@@ -58,4 +48,3 @@ def scrape_website_and_insert(url):
 if __name__ == '__main__':
     url = 'https://www.uzpharm-control.uz'
     scrape_website_and_insert(url)
-    dp.start_polling(bot)
